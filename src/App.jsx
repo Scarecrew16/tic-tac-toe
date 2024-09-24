@@ -48,6 +48,12 @@ function App() {
     return null
   }
 
+  const resetGame = () => {
+    setBoard(Array(9).fill(null))
+    setTurn(turns.x)
+    setWinner(null)
+  }
+
 
 
   const updateBoard = (index) =>{
@@ -97,7 +103,7 @@ function App() {
                 {winner && <Square>{winner}</Square>}
               </header>
               <footer>
-                <button>Jugar de nuevo</button>
+                <button onClick={resetGame}>Jugar de nuevo</button>
               </footer>
             </div>
           </section>
